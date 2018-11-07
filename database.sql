@@ -9,10 +9,10 @@ CREATE TABLE user (
 
 CREATE TABLE post (
     id INTEGER PRIMARY KEY,
+    username VARCHAR NOT NULL REFERENCES user,
     title VARCHAR NOT NULL,
     fulltext VARCHAR NOT NULL,
     post_votes INTEGER NOT NULL,
-    username VARCHAR NOT NULL REFERENCES user,
 );
 
 CREATE TABLE comments (
