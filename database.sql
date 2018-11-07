@@ -23,9 +23,6 @@ CREATE TABLE comments (
     comments_votes INTEGER NOT NULL,
 );
 
-INSERT INTO user VALUES ('Maria','12345678','mariajmribeiro@hotmail.com', 'maria ribeiro', null, 0);
-
-INSERT INTO user VALUES ('vw','12','bemlindo@hotmail.com', 'juanosuhuhuh', null, 0);
-
-INSERT INTO user VALUES ('patrica','1234','patricia@hotmail.com', 'patricia jdjdj', null, 0);
-
+INSERT INTO user VALUES ('Maria','12345678','mariajmribeiro@hotmail.com', 'Maria Ribeiro', null, 0);
+INSERT INTO user VALUES ('vw','12','bemlindo@hotmail.com', 'João Pereira', null, 0);
+INSERT INTO user VALUES ('tixa','1234','rochapatricia@gmail.com', 'Patrícia Rocha', null, 0);
