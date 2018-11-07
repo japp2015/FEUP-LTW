@@ -1,6 +1,6 @@
 CREATE TABLE user (
     username VARCHAR PRIMARY KEY,
-    password VARCHAR NOT NULL,
+    password NVARCHAR320 NOT NULL,
     email VARCHAR NOT NULL,
     fullname VARCHAR NOT NULL,
     profile_pic varbinary(MAX),
@@ -22,3 +22,10 @@ CREATE TABLE comments (
     text VARCHAR NOT NULL,
     comments_votes INTEGER NOT NULL,
 );
+
+INSERT INTO user VALUES ('Maria','12345678','mariajmribeiro@hotmail.com', 'maria ribeiro', null, 0);
+
+INSERT INTO user VALUES ('vw','12','bemlindo@hotmail.com', 'juanosuhuhuh', null, 0);
+
+INSERT INTO user VALUES ('patrica','1234','patricia@hotmail.com', 'patricia jdjdj', null, 0);
+
