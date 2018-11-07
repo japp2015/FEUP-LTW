@@ -3,7 +3,7 @@ CREATE TABLE user (
     password VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     fullname VARCHAR NOT NULL,
-    profile_pic varBinary(MAX),
+    profile_pic varbinary(MAX),
     score INTEGER NOT NULL,
 );
 
