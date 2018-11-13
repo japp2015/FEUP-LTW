@@ -1,0 +1,59 @@
+html {
+    background-color: #F6F1D1;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #CFD7C7;
+}
+
+h2 {
+    color: #10303A;
+}
+
+.button {
+    background: #10303A;
+    padding: 1em 2em;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover{
+    background: #70A9A1;
+}
+
+.logInWindow {
+    display: none;
+    position: fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.logInForm {
+    background-color: #CFD7C7;
+    margin: 10% auto;
+    padding: 20px;
+    height: 70%;
+    width: 30%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+}
+
+.closeBtn{
+    color: gray;
+    float: right;
+
+    font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: black;
+    text-decoration:none;
+    cursor:pointer;
+}
