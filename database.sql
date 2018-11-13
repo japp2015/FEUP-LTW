@@ -26,3 +26,4 @@ CREATE TABLE comments (
 INSERT INTO user VALUES ('Maria','12345678','mariajmribeiro@hotmail.com', 'Maria Ribeiro', null, 0);
 INSERT INTO user VALUES ('vw','12','bemlindo@hotmail.com', 'João Pereira', null, 0);
 INSERT INTO user VALUES ('tixa','1234','rochapatricia@gmail.com', 'Patrícia Rocha', null, 0);
+
