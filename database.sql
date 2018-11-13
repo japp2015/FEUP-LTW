@@ -26,3 +26,7 @@ CREATE TABLE comment (
 INSERT INTO user (username, password, email, fullname) VALUES ('maria','201506196','mariaribeiro@gmail.com', 'Maria Ribeiro');
 INSERT INTO user (username, password, email, fullname) VALUES ('vw','201504834','joaopereira@gmail.com', 'João Pereira');
 INSERT INTO user (username, password, email, fullname) VALUES ('tixa','201504616','patriciarocha@gmail.com', 'Patrícia Rocha');
+
+INSERT INTO post (username, title, fulltext) VALUES ('tixa', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet dolor suscipit ex pulvinar suscipit eget et libero. Aenean nec congue metus. Nunc mollis faucibus tortor, ut molestie neque iaculis in. Fusce viverra suscipit interdum. In dapibus pretium lacus nec viverra. Nam sed rhoncus tortor. Nam rhoncus lectus vitae risus vehicula viverra. Ut sollicitudin lacus eget ante volutpat blandit. Nullam quis bibendum lacus. Sed sed velit in ante efficitur sollicitudin vitae et diam. Fusce pellentesque hendrerit lectus nec ullamcorper. Aliquam ut volutpat eros, non sollicitudin velit. Curabitur sem urna, luctus nec fringilla non, faucibus id velit. Aliquam sit amet magna convallis, porta ipsum in, sagittis purus. Nullam vel sapien in libero auctor sodales et a felis. Vivamus accumsan, arcu in aliquet cursus, nulla metus euismod eros, id malesuada nisi lorem a enim.');
+
+INSERT INTO comment (username, text) VALUES ('vw', 'Donec eget elit non elit consequat consequat. Aliquam molestie, neque.');
