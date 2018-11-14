@@ -11,7 +11,6 @@
         <div class="imgcontainer">
             <img src="" alt="Avatar" class="avatar">
         </div>
-
         <div class="container">
             <label>Username:
                 <input type="text" placeholder="Enter username" name="uname" required>
@@ -27,4 +26,5 @@
         </div>
     </form>
 </body>
+
 </html>
