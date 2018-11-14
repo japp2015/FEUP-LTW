@@ -17,29 +17,7 @@ $posts = $query->fetch(); ?>
 
     <header id="topBar">
       <h2>Reddit</h2>
-<<<<<<< HEAD
       <a href="login.php">Login</a>
-=======
-      <button id="logInBtn" class="button"> Log In </button>
-      <div id="logIn" class="logInWindow">
-        <div id="logInForm">
-          <span class="closeBtn"> &times; </span>
-          <h3>Login</h3>
-          <form>
-            <label>Username: 
-              <input type="text" placeholder="Enter username" name="username" required>
-            </label>
-            <br><br>
-            <label>Password:
-              <input type="password" placeholder="Enter password" name="password" required>
-            </label>
-            <br><br>
-            <button formaction="action_login.php" formmethod="post">Login</button>
-          </form>
-        </div>
-      </div>
-      <script src="main.js"></script>
->>>>>>> master
     </header>
 
     <section id="post">
