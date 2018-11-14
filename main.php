@@ -18,6 +18,7 @@ $posts = $query->fetch(); ?>
     <header id="topBar">
       <h2>Reddit</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <button id="logInBtn" class="button"> Log In </button>
       <div id="logIn" class="logInWindow">
         <div id="logInForm">
@@ -37,6 +38,9 @@ $posts = $query->fetch(); ?>
         </div>
       </div>
       <script src="main.js"></script>
+=======
+      <a href="login.php">Login</a>
+>>>>>>> master
 =======
       <a href="login.php">Login</a>
 >>>>>>> master

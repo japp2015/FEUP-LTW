@@ -56,10 +56,13 @@ h2 {
     text-decoration:none;
     cursor:pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 /* FALTA FAZER ESTILO FORM*/
 =======
+=======
+>>>>>>> master
 }*/
 
 
@@ -108,5 +111,9 @@ button:hover {
 /* Change styles for extra small screens */
 @media screen and (max-width: 300px) {
     
+<<<<<<< HEAD
+}
+>>>>>>> master
+=======
 }
 >>>>>>> master
