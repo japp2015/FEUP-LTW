@@ -1,5 +1,4 @@
-<?php 
-include_once('database/connection.php');
+<?php include_once('database/connection.php');
 
 # Query returning all news in the database:
 $query = $db->prepare('SELECT * FROM post');
@@ -18,7 +17,8 @@ $posts = $query->fetchAll(); ?>
 
     <header id="topBar">
       <h2>Reddit</h2>
-      <button type="button" onclick="location.href='login.php';">Login</button>
+      <button type="button" onclick="location.href='login.php';">LOG IN</button>
+      <button type="button" onclick="location.href='signup.php';">SIGN UP</button>
     </header>
 
     <section id="post">
