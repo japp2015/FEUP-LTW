@@ -3,7 +3,7 @@
 # Query returning all news in the database:
 $query = $db->prepare('SELECT * FROM post');
 $query->execute();
-$posts = $query->fetch(); ?>
+$posts = $query->fetchAll(); ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -21,19 +21,20 @@ $posts = $query->fetch(); ?>
     </header>
 
     <section id="post">
-      <?php
-      foreach($posts as $post) {
-      ?>
+      <? foreach($posts as $post) {?>
+      
       <article>
         <?php 
-        echo '<h3>' . $post['title'] . '</h3>';
-        echo '<p>' . $post['fulltext'] . '</p>'; 
+        echo "<h3>" . $post['title'] . "</h3>";
+        echo "<p>" . $post['fulltext'] . "</p>"; 
         ?>
+
         <footer>
           <span id="username"><?php echo '<p> Posted by' . $post['username'] . '</p>';?></span>
         </footer>
       </article>
-      <?php } ?>
+
+      <? } ?>
     </section>
 
   </body>
