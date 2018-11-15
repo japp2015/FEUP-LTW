@@ -17,16 +17,14 @@
             <img src="assets/avatar.png" width="200" height="200" alt="Avatar" class="avatar">
         </div>
         <div class="container">
-            <label>Username
+            <label>Username</label>
                 <input type="text" placeholder="Enter username" name="uname" required>
-            </label>
             <br><br>
 
-            <label>Password
+            <label>Password</label>
                 <input type="password" placeholder="Enter password" name="psw" required>
-            </label>
             <br><br>
-
+            
             <button type="submit">Login</button>
         </div>
     </form>
