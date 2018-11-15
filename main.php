@@ -1,4 +1,5 @@
-<?php include_once('database/connection.php');
+<?php 
+include_once('database/connection.php');
 
 # Query returning all news in the database:
 $query = $db->prepare('SELECT * FROM post');
@@ -17,12 +18,11 @@ $posts = $query->fetchAll(); ?>
 
     <header id="topBar">
       <h2>Reddit</h2>
-      <a href="login.php">Login</a>
+      <button type="button" onclick="location.href='login.php';">Login</button>
     </header>
 
     <section id="post">
-      <? foreach($posts as $post) {?>
-      
+      <?php foreach($posts as $post) { ?>
       <article>
         <?php 
         echo "<h3>" . $post['title'] . "</h3>";
@@ -30,7 +30,7 @@ $posts = $query->fetchAll(); ?>
         ?>
 
         <footer>
-          <span id="username"><?php echo '<p> Posted by' . $post['username'] . '</p>';?></span>
+          <span id="username"><?php echo '<p> Posted by ' . $post['username'] . '</p>';?></span>
         </footer>
       </article>
 
