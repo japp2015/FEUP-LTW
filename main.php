@@ -1,9 +1,10 @@
-<?php include_once('database/connection.php');
+<?php 
+include_once('database/connection.php');
 
 # Query returning all news in the database:
 $query = $db->prepare('SELECT * FROM post');
 $query->execute();
-$posts = $query->fetch(); ?>
+$posts = $query->fetchAll(); ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -17,46 +18,18 @@ $posts = $query->fetch(); ?>
 
     <header id="topBar">
       <h2>Reddit</h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <button id="logInBtn" class="button"> Log In </button>
-      <div id="logIn" class="logInWindow">
-        <div id="logInForm">
-          <span class="closeBtn"> &times; </span>
-          <h3>Login</h3>
-          <form>
-            <label>Username: 
-              <input type="text" placeholder="Enter username" name="username" required>
-            </label>
-            <br><br>
-            <label>Password:
-              <input type="password" placeholder="Enter password" name="password" required>
-            </label>
-            <br><br>
-            <button formaction="action_login.php" formmethod="post">Login</button>
-          </form>
-        </div>
-      </div>
-      <script src="main.js"></script>
-=======
-      <a href="login.php">Login</a>
->>>>>>> master
-=======
-      <a href="login.php">Login</a>
->>>>>>> master
+      <button type="button" onclick="location.href='login.php';">Login</button>
     </header>
 
     <section id="post">
-      <?php
-      foreach($posts as $post) {
-      ?>
+      <?php foreach($posts as $post) { ?>
       <article>
         <?php 
         echo '<h3>' . $post['title'] . '</h3>';
         echo '<p>' . $post['fulltext'] . '</p>'; 
         ?>
         <footer>
-          <span id="username"><?php echo '<p> Posted by' . $post['username'] . '</p>';?></span>
+          <span id="username"><?php echo '<p> Posted by ' . $post['username'] . '</p>';?></span>
         </footer>
       </article>
       <?php } ?>
