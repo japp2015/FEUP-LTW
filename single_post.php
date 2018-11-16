@@ -24,31 +24,38 @@ $comments= getCommentsByPostId($id);
 </head>
 
 <body>
-
 <header id="topBar">
-  <h2>Reddit</h2>
+  <h2 onclick="location.href='main.php';">Reddit</h2>
   <button type="button" onclick="location.href='login.php';">Login</button>
   <button type="button" onclick="location.href='signup.php';">SIGN UP</button>
 </header>
 
-
-<section id="post">
 <article>
-  <?php
-  echo $post['title'];
-  ?>  
-  <p> <?php echo $post['fulltext']; ?>
-  <span class="author"><?=$post['username']?></span>
+  <section id="post">
+    <?php echo $post['title']; ?>  
+    <p> <?php echo $post['fulltext']; ?> </p>
+    <p class="author"> <?=$post['username']?> </p>
+  </section>
   <section id="comments">
-  <h1><?=count($comments)?> Comments</h1>
-          <?php foreach ($comments as $comment) { ?>
-            <article class="comment">
-              <span class="user"><?=$comment['username']?></span>
-              <p class="text"><?=$comment['text']?></p>
-            </article>
-          <?php } ?>
-  <footer>
-  <p>&copy; 2018 Reddit</p>
-  </footer>
+    <h1><?=count($comments)?> Comments</h1>
+    <?php foreach ($comments as $comment) { ?>
+      <span class="user"><?=$comment['username']?></span>
+      <p class="text"><?=$comment['text']?></p>
+    <?php } ?>
+  </section>
+  <section id="add comment">
+  <nav>
+      <form action="add_comment.php" method="post" >
+        <label>Add a Comment:
+          <input type="text" name="Comment">
+        <input type="submit" value="Upload">
+      </form>
+  </nav>
+  </section>
 </article>
-</section>
+
+</body>
+<footer>
+  <p>&copy; 2018 Reddit</p>
+</footer>
+

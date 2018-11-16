@@ -27,6 +27,8 @@ $posts = $query->fetchAll(); ?>
       <?php echo "<h3>" . $post['title'] . "</h3>";?> 
       </a>
       <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>
+      </a>
+      <?php echo "<p>" . $post['username'] . "</p>"; ?>
       </article>
 
       <? } ?>
