@@ -4,7 +4,7 @@ include_once('database/connection.php');
 # Query returning all news in the database:
 $id = $_GET['id'];
 if (!isset($_GET['id']))
- die("No id!");
+  die("No id!");
 
 $query = $db->prepare('SELECT * FROM post');
 $query->execute();
@@ -26,15 +26,16 @@ $comments= getCommentsByPostId($id);
 <body>
 <header id="topBar">
   <h2 onclick="location.href='main.php';">Reddit</h2>
-  <button type="button" onclick="location.href='login.php';">Login</button>
+  <button type="button" onclick="location.href='login.php';">LOGIN</button>
   <button type="button" onclick="location.href='signup.php';">SIGN UP</button>
+  <button type="button" onclick="location.href='logout.php';">LOGOUT</button>
 </header>
 
 <article>
   <section id="post">
     <?php echo $post['title']; ?>  
     <p> <?php echo $post['fulltext']; ?> </p>
-    <p class="author"> <?=$post['username']?> </p>
+    <p class="author">Posted by <?=$post['username']?> </p>
   </section>
   <section id="comments">
     <h1><?=count($comments)?> Comments</h1>
@@ -45,17 +46,17 @@ $comments= getCommentsByPostId($id);
   </section>
   <section id="add comment">
   <nav>
-      <form action="add_comment.php" method="post" >
-        <label>Add a Comment:
-          <input type="text" name="Comment">
+    <form action="comment_action.php" method="post" >
+      <label>Add a Comment:
+        <input type="text" name="Comment">
         <input type="submit" value="Upload">
-      </form>
+    </form>
   </nav>
   </section>
 </article>
 
 </body>
+
 <footer>
   <p>&copy; 2018 Reddit</p>
 </footer>
-

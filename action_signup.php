@@ -4,7 +4,8 @@
     
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
-
+    $email = htmlspecialchars($_POST['email']);
+    
     $stmt = $db->prepare('SELECT * FROM user WHERE username = ? AND password = ? ');
     $stmt->execute([$username, $password]);
     $user = $stmt->fetch();

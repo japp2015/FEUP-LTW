@@ -7,6 +7,7 @@ header {
     font-size: 15px;
     background-color: #CFD7C7;
     padding: 12px 12px;
+    margin: 0;
 }
 
 header button {
@@ -16,10 +17,11 @@ header button {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
+    opacity: 0.8;
 }
 
 header button:hover {
-    opacity: 0.8;
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -39,10 +41,34 @@ form {
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 12px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #CFD7C7;
     box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border: 1px solid #40798C;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 15px 0 15px 0;
+}
+
+i {
+    padding: 10px;
+    background: #40798C;
+    opacity: 0.8;
+    color: white;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+.input_container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 form button {
@@ -53,28 +79,15 @@ form button {
     margin: 8px 0;
     border: none;
     width: 100%;
+    opacity: 0.8;
 }
 
 form button:hover {
-    opacity: 0.8;
+    opacity: 1;
     cursor: pointer;
 }
 
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-.container {
-    font-weight: bold;
-    color: #10303A;
-    padding: 16px;
-}
-
-/* ---- MODAL STYLE ---- */
-
-.modal {
-    /*display: none; /* hidden by default */
+.login {
     position: fixed;
     z-index: 1; /* sit on top */
     left: 0;
@@ -86,25 +99,22 @@ form button:hover {
     padding-top: 60px;
 }
 
-.modal-content {
+.login_content {
     background-color: #CFD7C7;
     margin: 5px auto; 
     border: 1px solid #CFD7C7;
     width: 80%;
 }
 
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0; 
-    color: black;
-    font-size: 35px;
-    font-weight: bold;
+.signup_link {
+    text-align: center;
+    font-size: 12px;
 }
 
-.close:hover {
-    opacity: 0.8;
-    cursor: pointer;
+a {
+    text-decoration: none;
+    color: #40798C;
+    font-weight: bold;
 }
 
 /* ---- SIGN UP FORM STYLE ---- */
@@ -112,4 +122,28 @@ form button:hover {
 hr {
     border: 0.5px solid white;
     margin-bottom: 25px;
+}
+
+.container {    
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.signup {
+    position: fixed;
+    z-index: 1; /* sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* enable scroll */
+    background-color: #CFD7C7;
+    padding-top: 60px;
+}
+
+.signup_content {
+    background-color: #CFD7C7;
+    margin: 5px auto; 
+    border: 1px solid #CFD7C7;
+    width: 80%;
 }

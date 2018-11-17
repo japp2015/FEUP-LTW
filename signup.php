@@ -7,11 +7,8 @@
 </head>
 
 <body>
-<div id="id02" class="modal">
-    <!-- multiplication sign to close window -->
-    <span onclick="location.href='signup.php'.style.display='none';" class="close">&times;</span>
-
-    <form class="modal-content" action="action_signup.php" method="post">
+<div class="signup">
+    <form class="signup_content" action="action_signup.php" method="post">
         <div class="container">
             <h1>Sign Up</h1>
             <p>Join us.</p>
