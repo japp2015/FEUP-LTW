@@ -19,18 +19,16 @@ $posts = $query->fetchAll(); ?>
       <h2>Reddit</h2>
       <button type="button" onclick="location.href='login.php';">LOGIN</button>
       <button type="button" onclick="location.href='signup.php';">SIGN UP</button>
+      <button type="button" onclick="location.href='logout.php';">LOGOUT</button>
     </header>
 
     <section id="post">
       <?php foreach($posts as $post) { ?>
-      <article> <a  href="single_post.php?id=<?=$post['id']?>";>
-      <?php echo "<h3>" . $post['title'] . "</h3>";?> 
-      </a>
-      <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>
-      </a>
-      <?php echo "<p>" . $post['username'] . "</p>"; ?>
+      <article> 
+        <a  href="single_post.php?id=<?=$post['id']?>";><?php echo "<h3>" . $post['title'] . "</h3>";?></a>
+        <?php echo "<p>" . $post['fulltext'] . "</p>"; ?> 
+        <?php echo "<p> Posted by " . $post['username'] . "</p>"; ?>
       </article>
-
       <? } ?>
     </section>
 

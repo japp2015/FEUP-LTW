@@ -7,11 +7,8 @@
 </head>
 
 <body>
-<div id="id02" class="modal">
-    <!-- multiplication sign to close window -->
-    <span onclick="location.href='signup.php'.style.display='none';" class="close">&times;</span>
-
-    <form class="modal-content" action="action_signup.php" method="post">
+<div class="signup">
+    <form class="signup_content" action="action_signup.php" method="post">
         <div class="container">
             <h1>Sign Up</h1>
             <p>Join us.</p>
@@ -22,14 +19,19 @@
             <br><br>
 
             <label>Password</label>
-                <input type="password" placeholder="Enter password" name="psw" required>
+                <input type="password" placeholder="Enter password" name="password" required>
             <br><br>
 
             <label>Username</label>
-                <input type="text" placeholder="Enter username" name="uname" required>
+                <input type="text" placeholder="Enter username" name="username" required>
             <br><br>
 
             <button type="submit">Sign Up</button>
+
+            <?php if (isset($_GET['error'])) {
+            echo "<p>" . $error = $_GET['error'] . "</p>";
+            } ?>
+            
         </div>
     </form>
 </div>
