@@ -22,6 +22,11 @@ $posts = $query->fetchAll(); ?>
       <button type="button" onclick="location.href='logout.php';">LOGOUT</button>
     </header>
 
+    <section id="new_post">
+      <h3> You think you have a good history?? Share it!! </h3>
+      <button type="button" onclick="location.href='new_post.php';">CREAT NEW POST</button> 
+    </section>
+
     <section id="post">
       <?php foreach($posts as $post) { ?>
       <article> 

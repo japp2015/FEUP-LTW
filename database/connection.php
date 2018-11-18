@@ -40,4 +40,10 @@ function insertComment($post_id, $username, $text) {
   return $stmt->execute([$post_id, $username, $text]);
 }
 
+function insertPost($username,$title, $fulltext) {
+  global $db;
+  $stmt = $db->prepare('INSERT INTO post (id,username, title, fulltext) VALUES (NULL,?, ?, ?) ');
+  return $stmt->execute([$username,$title,$fulltext]);
+}
+
 ?>
