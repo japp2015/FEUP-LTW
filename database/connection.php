@@ -34,4 +34,10 @@ function insertUser($username, $password, $email) {
   return $stmt->execute([$username, $password, $email]);
 }
 
+function insertComment($post_id, $username, $text) {
+  global $db;
+  $stmt = $db->prepare('INSERT INTO comment (id, post_id,username, text) VALUES (NULL,?, ?, ?) ');
+  return $stmt->execute([$post_id, $username, $text]);
+}
+
 ?>
