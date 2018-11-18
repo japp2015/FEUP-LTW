@@ -7,6 +7,7 @@
 
     if (validateLogin($username, $password)) {
         $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header('Location: main.php');
     } else {
         $error = "Username or password are incorrect.";

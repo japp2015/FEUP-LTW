@@ -28,6 +28,13 @@ function userExists($username) {
   return $stmt->fetch();
 }
 
+function emailExists($email, $username) {
+  global $db;
+  $stmt = $db->prepare('SELECT * FROM user WHERE username = ? and email = ?');
+  $stmt->execute([$username, $email]);
+  return $stmt->fetch();
+}
+
 function insertUser($username, $password, $email) {
   global $db;
   $stmt = $db->prepare('INSERT INTO user (username, password, email) VALUES (?, ?, ?) ');
@@ -44,6 +51,30 @@ function insertPost($username,$title, $fulltext) {
   global $db;
   $stmt = $db->prepare('INSERT INTO post (id,username, title, fulltext) VALUES (NULL,?, ?, ?) ');
   return $stmt->execute([$username,$title,$fulltext]);
+}
+
+function deleteUser($username) {
+  global $db;
+  $stmt = $db->prepare('DELETE FROM user WHERE username = ?');
+  return $stmt->execute([$username]);
+}
+
+function changePassword($new_password, $username) {
+  global $db;
+  $stmt = $db->prepare('UPDATE user SET password = ? WHERE username = ? ');
+  return $stmt->execute([$new_password, $username]);
+}
+
+function changeEmail($new_email, $username) {
+  global $db;
+  $stmt = $db->prepare('UPDATE user SET email = ? WHERE username = ? ');
+  return $stmt->execute([$new_email, $username]);
+}
+
+function changeName($new_name, $username) {
+  global $db;
+  $stmt = $db->prepare('UPDATE user SET fullname = ? WHERE username = ? ');
+  return $stmt->execute([$new_name, $username]);
 }
 
 ?>
