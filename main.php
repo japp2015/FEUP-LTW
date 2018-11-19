@@ -1,4 +1,5 @@
 <?php include_once('database/connection.php');
+session_start();
 
 # Query returning all news in the database:
 $query = $db->prepare('SELECT * FROM post');

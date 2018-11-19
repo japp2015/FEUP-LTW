@@ -77,4 +77,16 @@ function changeName($new_name, $username) {
   return $stmt->execute([$new_name, $username]);
 }
 
+function deletePost($id) {
+  global $db;
+  $stmt = $db->prepare('DELETE FROM post WHERE id = ?');
+  return $stmt->execute([$id]);
+}
+
+function deleteComment($id) {
+  global $db;
+  $stmt = $db->prepare('DELETE FROM comment WHERE id = ?');
+  return $stmt->execute([$id]);
+}
+
 ?>
