@@ -19,26 +19,20 @@ $posts = $query->fetchAll(); ?>
     <header id="topBar">
       <h2>Reddit</h2>
 
-      <!-- FAZER UMA CENA DESTAS PARA ORGANIZAR MELHOR OS BOTÕES  
+      <?php
+      if (!isset($_SESSION['username'])){?>
         <nav id="menu">
-          <ul>
-            <li><a href="index.html">Local</a></li>
-            <li><a href="index.html">World</a></li>
-            <li><a href="index.html">Politics</a></li>
-            <li><a href="index.html">Sports</a></li>
-            <li><a href="index.html">Science</a></li>
-            <li><a href="index.html">Weather</a></li>
-          </ul>
+         <ul>
+          <li> <button type="button" onclick="location.href='login.php';">LOGIN</button> </li>
+          <li> <button type="button" onclick="location.href='signup.php';">SIGN UP</button> </li> <?php
+      }else{?>
+          <li> <button type="button" onclick="location.href='logout.php';">LOGOUT</button> </li>
+          <li> <button type="button" onclick="location.href='edit_profile.php';">EDIT PROFILE</button> </li>
+         </ul>
         </nav>
-      -->
-
-      <button type="button" onclick="location.href='login.php';">LOGIN</button>
-      <button type="button" onclick="location.href='signup.php';">SIGN UP</button>
-      <button type="button" onclick="location.href='logout.php';">LOGOUT</button>
-      <button type="button" onclick="location.href='edit_profile.php';">EDIT PROFILE</button>
+      <?php }?>
     </header>
-
-    <!-- ISTO SE CALHAR TAMBÉM DEVIA IR PARA O MENU -->
+    
     <section id="new_post">
       <h3> You think you have a good history?? Share it!! </h3>
       <button type="button" onclick="location.href='new_post.php';">CREAT NEW POST</button> 
