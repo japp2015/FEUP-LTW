@@ -38,7 +38,7 @@ $comments= getCommentsByPostId($id);
     <p> <?php echo $post['fulltext']; ?> </p>
     <p class="author">Posted by <?=$post['username']?> </p>
     <?php If (isset($_SESSION['username'])) {
-          If ($Post['username']==$_SESSION['username']){?> 
+          If ($post['username']==$_SESSION['username']){?> 
               <button type="button" class="delete" onclick="location.href='delete_post.php?id=<?=$post['id']?>';">Delete Your Post</button>
           <?php }
     }?>
@@ -50,7 +50,7 @@ $comments= getCommentsByPostId($id);
       <span class="user"><?=$comment['username']?></span>
       <p class="text"><?=$comment['text']?></p>
       <?php If (isset($_SESSION['username'])) {
-          If ($Comment['username']==$_SESSION['username']){?> 
+          If ($comment['username']==$_SESSION['username']){?> 
               <button type="button" class="delete" onclick="location.href='delete_comment.php?id_comment=<?=$comment['id']?>&id_post=<?=$post['id']?>';">Delete Your Comment</button>
           <?php }
       }
