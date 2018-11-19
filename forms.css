@@ -1,0 +1,106 @@
+/* ----- LOGIN FORM ----- */
+
+form {
+    border: 3px solid #CFD7C7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form-title {
+    text-align: center;
+    color: #10303A;
+    font-weight: bold;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 12px;
+    display: inline-block;
+    border: 1px solid #CFD7C7;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border: 1px solid #40798C;
+}
+
+.input_container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #CFD7C7;
+    padding-top: 60px;
+}
+
+.login_content {
+    background-color: #CFD7C7;
+    margin: 5px auto; 
+    width: 80%;
+}
+
+form button {
+    background-color: #40798C;
+    color: white;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+    opacity: 0.8;
+}
+
+form button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.signup_link {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Remove decoration from hyperlinks */
+a {
+    text-decoration: none;
+    color: #40798C;
+    font-weight: bold;
+}
+
+/* ----- SIGN UP FORM ----- */
+
+hr {
+    border: 0.5px solid white;
+    margin-bottom: 25px;
+}
+
+.container {    
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.signup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #CFD7C7;
+    padding-top: 60px;
+}
+
+.signup_content {
+    background-color: #CFD7C7;
+    margin: 5px auto; 
+    border: 1px solid #CFD7C7;
+    width: 80%;
+}

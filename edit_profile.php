@@ -8,7 +8,7 @@
 
 <body>
     <div class="edit_profile">
-        <form class="edit_content" action="action_edit.php" method="post">       
+        <form class="edit_content" action="action_edit.php" method="post">
             <div class="input_container">
                 <span class="edit-profile-title">Customize profile</span>
             </div>
