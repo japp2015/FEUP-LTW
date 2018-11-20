@@ -7,9 +7,7 @@
 
     $new_name = $_POST['fullname'];
     $new_password = $_POST['password'];
-    $new_email = $_POST['email'];
-
-  
+    $new_email = $_POST['email'];  
 
     /* Change email */
     if (!empty($new_email)) {

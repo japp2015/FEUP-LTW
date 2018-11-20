@@ -8,11 +8,12 @@ $posts = $query->fetchAll(); ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
-<script src="must_login.js" defer></script>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
+    <script src="must_login.js" defer></script>
 </head>
 
 <body>

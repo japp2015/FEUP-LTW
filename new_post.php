@@ -35,22 +35,20 @@ session_start();
 
     <?php
         if (isset($_GET['error'])) {
-            echo "<p>" . $error = $_GET['error'] . "</p>";}
-        else{
-             $username=$_SESSION["username"];
+            echo "<p>" . $error = $_GET['error'] . "</p>";
+        } else {
+            $username=$_SESSION["username"];
+        }
     ?>
 
     <section id="add post">
         <form action="action_post.php" method="post">
             <h3> Create and share content with the community. <h3>
-                    <div> <input type="text" placeholder="Title" name="Title"> </div>
-                    <div> <input type="text" placeholder="Text" name="Post"> </div>
-                    <div> <input type="submit" value="Upload"> </div>
+            <div> <input type="text" placeholder="Title" name="Title"> </div>
+            <div> <input type="text" placeholder="Text" name="Post"> </div>
+            <div> <input type="submit" value="Upload"> </div>
         </form>
     </section>
-    <?php 
-    }
-    ?>
 
     <footer>
         <p>&copy; 2018 Reddit</p>
