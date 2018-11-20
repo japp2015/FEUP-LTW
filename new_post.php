@@ -35,16 +35,11 @@ session_start();
 
     <?php
         if (isset($_GET['error'])) {
-            echo "<p>" . $error = $_GET['error'] . "</p>";} 
-        if (!isset($_SESSION["username"])){
+            echo "<p>" . $error = $_GET['error'] . "</p>";}
+        else{
+             $username=$_SESSION["username"];
     ?>
-    <p>You must <a href='login.php'>login</a></p>
-    <p>Not registered? <a href="signup.php">Create an account.</a></p>
-    <?php
-    }
-    else{
-        $username=$_SESSION["username"];
-        ?>
+
     <section id="add post">
         <form action="action_post.php" method="post">
             <h3> Create and share content with the community. <h3>

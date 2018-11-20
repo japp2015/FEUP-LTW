@@ -2,7 +2,6 @@
 include_once('database/connection.php');
 session_start();
 
-# Query returning all news in the database:
 $id = $_GET['id'];
 if (!isset($_GET['id']))
   die("No id!");
@@ -48,6 +47,13 @@ $comments= getCommentsByPostId($id);
             <p>
                 <?php echo $post['fulltext']; ?>
             </p>
+            <?php if (isset($_SESSION['username'])) { ?>
+            <button type="button" onclick="location.href='add_score.php?id=<?=$_GET['id']?>';">Like</button>
+            <button type="button" onclick="location.href='subtract_score.php?id=<?=$_GET['id']?>';">Dislike</button>
+            <?php } ?>
+            <p> Score:
+                <?php echo $post['post_score']; ?>
+            </p>
             <p class="author">Posted by
                 <?=$post['username']?>
             </p>
@@ -63,18 +69,21 @@ $comments= getCommentsByPostId($id);
             <h1>
                 <?=count($comments)?> Comments</h1>
             <?php foreach ($comments as $comment) { ?>
-            <span class="user">
-                <?=$comment['username']?></span>
-            <p class="text">
-                <?=$comment['text']?>
-            </p>
-            <?php If (isset($_SESSION['username'])) {
-          If ($comment['username']==$_SESSION['username']){?>
-            <button type="button" class="delete" onclick="location.href='delete_comment.php?id_comment=<?=$comment['id']?>&id_post=<?=$post['id']?>';">Delete
+                <span class="user">
+                   <?=$comment['username']?></span>
+                <p class="text"> <?=$comment['text']?> </p>
+                   <?php If (isset($_SESSION['username'])) {
+                      If ($comment['username']==$_SESSION['username']){?>
+                        <button type="button" class="delete" onclick="location.href='delete_comment.php?id_comment=<?=$comment['id']?>&id_post=<?=$post['id']?>';">Delete
                 Your Comment</button>
-            <?php }
-      }
-    } ?>
+                      <?php }?>
+                      <p> <button type="button" onclick="location.href='add_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>';">Like</button>
+                      <button type="button" onclick="location.href='subtract_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>';">Dislike</button>
+                      </p>
+                   <?php } ?>
+                   <p> Score: <?php echo $comment['comment_score']; ?> </p>
+            <?php } ?>
+
         </section>
         <section id="add comment">
             <p>

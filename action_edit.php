@@ -9,6 +9,8 @@
     $new_password = $_POST['password'];
     $new_email = $_POST['email'];
 
+  
+
     /* Change email */
     if (!empty($new_email)) {
         if (emailExists($new_email, $username)) {

@@ -89,4 +89,34 @@ function deleteComment($id) {
   return $stmt->execute([$id]);
 }
 
+function UploadPicture($pic, $username) {
+  global $db;
+  $stmt = $db->prepare('UPDATE user SET profile_pic = ? WHERE username = ?  ');
+  return $stmt->execute([$pic, $username]);
+}
+
+function AddScore($post_id){
+  global $db;
+  $stmt = $db->prepare('UPDATE post SET post_score = post_score + 1 WHERE id = ? ');
+  return $stmt->execute([$post_id]);
+}
+
+function SubtractScore($post_id) {
+  global $db;
+  $stmt = $db->prepare('UPDATE post SET post_score = post_score - 1 WHERE id = ? ');
+  return $stmt->execute([$post_id]);
+}
+
+function AddScoreComment($comment_id){
+  global $db;
+  $stmt = $db->prepare('UPDATE comment SET comment_score = comment_score + 1 WHERE id = ? ');
+  return $stmt->execute([$comment_id]);
+}
+
+function SubtractScoreComment($comment_id) {
+  global $db;
+  $stmt = $db->prepare('UPDATE comment SET comment_score = comment_score - 1 WHERE id = ? ');
+  return $stmt->execute([$comment_id]);
+}
+
 ?>

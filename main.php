@@ -8,7 +8,7 @@ $posts = $query->fetchAll(); ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
-
+<script src="must_login.js" defer></script>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
@@ -41,7 +41,12 @@ $posts = $query->fetchAll(); ?>
         <section id="create_post">
             <p> Create and share content with the community. </p>
             <div class="button">
-                <button type="button" onclick="location.href='new_post.php';">CREATE POST</button>
+                <?php if (!isset($_SESSION["username"])){?>
+                    <button type="button" onclick="must_login()">CREATE POST</button>
+                    <p id="demo"></p>
+                <?php } else { ?>
+                    <button type="button" onclick="location.href='new_post.php';">CREATE POST</button>
+                <?php } ?>
             </div>
         </section>
 
