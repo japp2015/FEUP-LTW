@@ -11,8 +11,8 @@ $posts = $query->fetchAll(); ?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <link href="layout.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,9 +46,9 @@ $posts = $query->fetchAll(); ?>
         </section>
 
         <?php foreach($posts as $post) { ?>
-        <section id="post">
+        <section>
 
-            <article>
+            <article id="post">
                 <a href="single_post.php?id=<?=$post['id']?>" ;>
                     <?php echo "<h3>" . $post['title'] . "</h3>";?></a>
                 <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>

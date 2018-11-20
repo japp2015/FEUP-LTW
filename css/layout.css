@@ -14,7 +14,7 @@ body>header {
 body section {
     background-color: white;
     margin: 2em;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .container {
@@ -27,8 +27,6 @@ body section {
 
 #create_post {  
     grid-area: create_post;
-    grid-row-start: 1;
-    grid-row-end: 1;
 }
 
 #post {

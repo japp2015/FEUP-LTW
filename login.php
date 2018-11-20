@@ -3,14 +3,14 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="forms.css" rel="stylesheet">
+    <link href="css/forms.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="login">
         <form class="login_content" action="action_login.php" method="post">
-            <div class="input_container">
-                <span class="login-form-title">Login</span>
+            <div class="title_container">
+                <h1 class="login-form-title">Login</h1>
             </div>
 
             <div class="input_container">
