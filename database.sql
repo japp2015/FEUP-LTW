@@ -3,7 +3,7 @@ CREATE TABLE user (
     password BINARY(32) NOT NULL,
     email VARCHAR(320) NOT NULL, -- 64 characters for local part + @ + 255 for domain name
     fullname VARCHAR(128),
-    profile_pic VARBINARY,
+    profile_pic VARCHAR,
     score INTEGER NOT NULL DEFAULT 0 CHECK (score >= 0)
 );
 

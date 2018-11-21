@@ -1,25 +1,30 @@
 <?php 
+include_once('database/connection.php');
+session_start();
+$username=$_SESSION["username"];
+UploadPicture($username, $username);
 
-    /*include_once('database/connection.php');    
-    session_start();
+$originalFileName = "profile_pic/originals/$username.jpg";
+$smallFileName = "profile_pic/thumbs_small/$username.jpg";
 
-    if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["fileToUpload"]["name"]); // if image is invalid, getimagesize() returns FALSE
-        if($check !== false) {
-            $imagename=$_FILES["fileToUpload"]["name"]; 
-            $imagetmp=addslashes (file_get_contents($_FILES['fileToUpload']['tmp_name']));
-            UploadPicture($imagetmp, $_SESSION['username']);
-        } else {
-            echo "File is not an image.";
-        }
-    }
+  // Move the uploaded file to its final destination
+move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
 
-    // allow only certain file formats
-    if($imageFileType != "png" && $imageFileType != "jpg") {
-        echo "Sorry, only JPG or PNG files are allowed.";
-        $uploadOk = 0;
-    }
+  // Crete an image representation of the original image
+$original = imagecreatefromjpeg($originalFileName);
 
-    header('Location: main.php');*/
+$width = imagesx($original);     // width of the original image
+$height = imagesy($original);    // height of the original image
+$square = min($width, $height);  // size length of the maximum square
+
+  // Create and save a small square thumbnail
+$small = imagecreatetruecolor(200, 200);
+imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
+imagejpeg($small, $smallFileName);
+
+  header("Location: view_profile.php?username=".$username);
+?>
+
+    
     
 ?>
