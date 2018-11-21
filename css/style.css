@@ -81,7 +81,7 @@ section {
     border: none;
     opacity: 0.8;
     text-align: center;
-    width: 80%;
+    width: 70%;
 }
 
 #create_post button:hover {
@@ -95,7 +95,7 @@ section {
 
 #create_post p {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 15px;
+    padding: 15px 15px;
     text-align: justify;
     text-justify: inter-word;
 }

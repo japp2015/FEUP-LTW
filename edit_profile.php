@@ -12,8 +12,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,32 +24,32 @@
 
     <div class="edit_profile">
         <form class="edit_content" action="action_edit.php" method="post">
-            <div class="input_container">
-                <span class="edit-profile-title">Customize profile</span>
+            <div class="title_container">
+                <h1><span class="edit-profile-title">Customize profile</span></h1>
             </div>
-
-            <p>Profile information</p>
+            <hr>
+            <h3>Profile information</h3>
 
             <div class="input_container">
-                <label>Display name (optional)</label>
+                <!--<label>Display name (optional)</label>-->
                 <input type="text" placeholder="Change/Add name" name="fullname">
             </div>
 
             <div class="input_container">
-                <label>Change email</label>
+                <!--<label>Change email</label>-->
                 <input type="text" placeholder="Change email" name="email">
             </div>
 
-            <div class="input_container">
+            <div class="link_container">
                 <a href="change_password.php">Change password</a>
             </div>
            
             <!--delete current user from database -->
-            <div class="input_container">
+            <div class="link_container">
                 <a href="delete_user.php">Deactivate account</a>
             </div>
 
-            <div class="input_container">
+            <div class="button_container">
                 <button type="submit">Save changes</button>
             </div>
         </form>
@@ -57,13 +59,11 @@
 
         <p>Profile Pic: </p>
         <form action="action_upload.php" method="post" enctype="multipart/form-data"> Select image to upload:
-              <input type="file" name="image">
-              <input type="submit" value="Upload">
+            <input type="file" name="image">
+            <input type="submit" value="Upload">
         </form>
 
     </div>
-
-    <?php include_once('footer.php'); ?>
 
     <?php include_once('footer.php'); ?>
 

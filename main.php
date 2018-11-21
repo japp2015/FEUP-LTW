@@ -11,6 +11,7 @@ $posts = $query->fetchAll(); ?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
     <script src="must_login.js" defer></script>
@@ -41,7 +42,7 @@ $posts = $query->fetchAll(); ?>
                     <?php echo "<h3>" . $post['title'] . "</h3>";?></a>
                 <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>
                 <footer>
-                    <?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?>
+                    <?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?>                
                 </footer>
             </article>
 

@@ -6,8 +6,12 @@
     $password = $_SESSION['password'];
 
     $new_name = $_POST['fullname'];
-    $new_password = $_POST['password'];
-    $new_email = $_POST['email'];  
+    $new_email = $_POST['email']; 
+
+    if (empty($new_email) && empty($new_name)) {
+        $error = "Please fill a field.";
+        header('Location: edit_profile.php?error=' . $error);
+    }
 
     /* Change email */
     if (!empty($new_email)) {

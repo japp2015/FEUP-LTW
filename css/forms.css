@@ -1,7 +1,6 @@
 /* ----- LOGIN FORM ----- */
 
 form {
-    border: 3px solid #bfc9d1;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -21,7 +20,8 @@ input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 12px;
     display: inline-block;
-    border: 1px solid #bfc9d1;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 3px 3px;
     box-sizing: border-box;
 }
 
@@ -58,6 +58,7 @@ form button {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
+    border-radius: 5px;
     width: 100%;
     opacity: 0.8;
 }
@@ -72,8 +73,7 @@ form button:hover {
     font-size: 12px;
 }
 
-/* Remove decoration from hyperlinks */
-a {
+form a {
     text-decoration: none;
     color: #4C4C47;
     font-weight: bold;
@@ -82,7 +82,7 @@ a {
 /* ----- SIGN UP FORM ----- */
 
 hr {
-    border: 0.5px solid white;
+    border: 0.25px solid white;
     margin-bottom: 25px;
 }
 
@@ -112,9 +112,10 @@ hr {
 
 .signup h1 {
     color: #4C4C47;
+    text-align: center;
 }
 
-.signup p {
+.signup h3 {
     color: #4C4C47;
 }
 

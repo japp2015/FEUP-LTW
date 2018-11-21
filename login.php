@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit</title>
     <link href="css/forms.css" rel="stylesheet">
 </head>
 

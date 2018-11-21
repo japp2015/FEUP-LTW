@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit</title>
     <link href="css/forms.css" rel="stylesheet">
 </head>
 
@@ -11,18 +12,18 @@
         <form class="signup_content" action="action_signup.php" method="post">
             <div class="container">
                 <h1>Sign Up</h1>
-                <p>Join us.</p>
+                <h3>Join us.</h3>
                 <hr>
 
-                <label>Email</label>
+                <!--<label>Email</label>-->
                 <input type="text" placeholder="Enter email" name="email" required>
                 <br><br>
 
-                <label>Password</label>
+                <!--label>Password</label>-->
                 <input type="password" placeholder="Enter password" name="password" required>
                 <br><br>
 
-                <label>Username</label>
+                <!--<label>Username</label>-->
                 <input type="text" placeholder="Enter username" name="username" required>
                 <br><br>
 

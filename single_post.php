@@ -20,6 +20,7 @@ $comments= getCommentsByPostId($id);
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
 </head>
@@ -63,16 +64,12 @@ $comments= getCommentsByPostId($id);
         </section>
 
         <section id="add comment">
-
-        <?php if (isset($_SESSION["username"])){?>
-
-            <p> <form action="action_comment.php?id=<?=$id?>" method="post"> </p>
+        <?php if (isset($_SESSION["username"])) { ?>
+            <p><form action="action_comment.php?id=<?=$id?>" method="post"></p>
             <div> <input type="text" placeholder="Add a Comment:" name="Comment"> </div>
             <div> <input type="submit" value="Upload"> </div>
             </form>
-                
-        <?php } ?>
- 
+            <?php } ?>
         </section>
         
     </article>

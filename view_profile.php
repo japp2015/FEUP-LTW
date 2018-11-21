@@ -1,4 +1,5 @@
-<?php include_once('database/connection.php');
+<?php 
+include_once('database/connection.php');
 session_start();
 
 $username = $_GET['username'];
@@ -26,21 +27,21 @@ $posts = getPostsByUsername($username)
     
     <h1> <?php echo $user['username'];?> Profile </h1>
 
-    <p> Fulname: <?php
+    <p>Fullname <?php
         if (isset($user['fullname'])){
             echo $user['fullname'];
         }else{
             echo "Not Defined";} ?> 
     </p>
 
-    <p> Profile Pic: <?php
+    <p>Profile Pic <?php
         if (isset($user['profile_pic'])){?>
             <p> <img src="profile_pic/thumbs_small/<?=$username?>.jpg"></p>
         <?php } else {
             echo "Not Defined";} ?> 
     </p>
       
-    <p> Score: <?php echo $user['score'];?> </p>
+    <p>Score: <?php echo $user['score'];?> </p>
 
     </section>
      
@@ -64,10 +65,6 @@ $posts = getPostsByUsername($username)
         </section>
             
     <?php } ?>
-    
-    
-
-
 
     <?php include_once('footer.php'); ?>
 
