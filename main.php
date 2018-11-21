@@ -41,7 +41,7 @@ $posts = $query->fetchAll(); ?>
                     <?php echo "<h3>" . $post['title'] . "</h3>";?></a>
                 <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>
                 <footer>
-                    <?php echo "<p> Posted by " . $post['username'] . "</p>"; ?>
+                    <?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?>
                 </footer>
             </article>
 

@@ -1,3 +1,4 @@
+
 <header id="topBar">
     <a href="main.php"><h1>Reddit</h1></a>
     <?php if (!isset($_SESSION['username'])) { ?>
@@ -11,7 +12,7 @@
     <nav id="menu">
         <ul>
             <li> <button type="button" onclick="location.href='logout.php';">LOGOUT</button> </li>
-            <li> <button type="button" onclick="location.href='edit_profile.php';">EDIT PROFILE</button> </li>
+            <li> <button type="button" onclick="location.href='view_profile.php?username=<?=$_SESSION['username']?>';">VIEW PROFILE</button> </li>
         </ul>
     </nav>
     <?php } ?>

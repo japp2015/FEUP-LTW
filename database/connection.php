@@ -119,4 +119,18 @@ function SubtractScoreComment($comment_id) {
   return $stmt->execute([$comment_id]);
 }
 
+function getUserByUsername($username) {
+  global $db;
+  $query = $db->prepare('SELECT * FROM user WHERE username = ?');
+  $query->execute(array($username));
+  return $query->fetch();
+}
+
+function getPostsByUsername($username) {
+  global $db;
+  $query = $db->prepare('SELECT * FROM post WHERE username = ?');
+  $query->execute(array($username));
+  return $query->fetchAll();
+}
+
 ?>

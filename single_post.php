@@ -37,7 +37,7 @@ $comments= getCommentsByPostId($id);
                 <button type="button" onclick="location.href='subtract_score.php?id=<?=$_GET['id']?>';">Dislike</button>
             <?php } ?>
             <p> Score:<?php echo $post['post_score']; ?></p>
-            <p class="author">Posted by <?=$post['username']?></p>
+            <p class="author"><?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?></p>
             <?php if (isset($_SESSION['username'])) {
                 if ($post['username']==$_SESSION['username']) { ?>
                     <button type="button" class="delete" onclick="location.href='delete_post.php?id=<?=$post['id']?>';">Delete your post</button>
@@ -48,7 +48,7 @@ $comments= getCommentsByPostId($id);
         <section id="comments">
             <h1><?=count($comments)?> Comments</h1>
             <?php foreach ($comments as $comment) { ?>
-                <span class="user"><?=$comment['username']?></span>
+                <span class="user"><?php echo "<p> Comment by <a href='view_profile.php?username=". $comment['username'] ."'>" . $comment['username'] . "</a></p>"; ?></span>
                 <p class="text"> <?=$comment['text']?> </p>
                 <?php if (isset($_SESSION['username'])) {
                     if ($comment['username']==$_SESSION['username']) { ?>
