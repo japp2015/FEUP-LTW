@@ -14,24 +14,7 @@ session_start();
 
 <body>
 
-    <header id="topBar">
-        <h1>Reddit</h1>
-        <?php if (!isset($_SESSION['username'])) { ?>
-        <nav id="menu">
-            <ul>
-                <li> <button type="button" onclick="location.href='login.php';">LOGIN</button> </li>
-                <li> <button type="button" onclick="location.href='signup.php';">SIGN UP</button> </li>
-            </ul>
-        </nav>
-        <?php } else { ?>
-        <nav id="menu">
-            <ul>
-                <li> <button type="button" onclick="location.href='logout.php';">LOGOUT</button> </li>
-                <li> <button type="button" onclick="location.href='edit_profile.php';">EDIT PROFILE</button> </li>
-            </ul>
-        </nav>
-        <?php } ?>
-    </header>
+    <?php include_once('header.php'); ?>
 
     <?php
         if (isset($_GET['error'])) {
@@ -50,9 +33,7 @@ session_start();
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2018 Reddit</p>
-    </footer>
+    <?php include_once('footer.php'); ?>
 
 </body>
 

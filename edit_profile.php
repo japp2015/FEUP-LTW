@@ -12,10 +12,14 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
 </head>
 
 <body>
+
+    <?php include_once('header.php'); ?>
+
     <div class="edit_profile">
         <form class="edit_content" action="action_edit.php" method="post">
             <div class="input_container">
@@ -63,6 +67,8 @@
             }?>
         </div>
     </div> -->
+
+    <?php include_once('footer.php'); ?>
 
 </body>
 
