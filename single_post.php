@@ -63,15 +63,16 @@ $comments= getCommentsByPostId($id);
         </section>
 
         <section id="add comment">
-            <p>
-                <form action="action_comment.php?id=<?=$id?>" method="post">
-            </p>
+
+        <?php if (isset($_SESSION["username"])){?>
+
+            <p> <form action="action_comment.php?id=<?=$id?>" method="post"> </p>
             <div> <input type="text" placeholder="Add a Comment:" name="Comment"> </div>
             <div> <input type="submit" value="Upload"> </div>
             </form>
-            <?php if (isset($_GET['error'])) {
-                echo "<p>" . $error = $_GET['error'] . "</p>";
-            } ?>
+                
+        <?php } ?>
+ 
         </section>
         
     </article>

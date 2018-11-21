@@ -34,9 +34,9 @@ $posts = getPostsByUsername($username)
     </p>
 
     <p> Profile Pic: <?php
-        if (isset($user['profile_pic'])){
-            echo $user['profile_pic'];
-        }else{
+        if (isset($user['profile_pic'])){?>
+            <p> <img src="profile_pic/thumbs_small/<?=$username?>.jpg"></p>
+        <?php } else {
             echo "Not Defined";} ?> 
     </p>
       
@@ -54,13 +54,18 @@ $posts = getPostsByUsername($username)
     
     </section>
 
-    <section id="user_posts">
-    <h1><?=count($posts)?> Post(s) </h1>
-            <?php foreach ($posts as $post) { ?>
-                <p><a href="single_post.php?id=<?=$post['id']?>"> <?=$post['title']?> </a> </p>
-            <?php } ?>
+    <?php foreach ($posts as $post) { ?>
+        
+        <section id="user_posts">
+            
+            <h1><a href="single_post.php?id=<?=$post['id']?>"> <?=$post['title']?> </a> </h1>
+            <p><?=$post['fulltext']?> <p>    
+        
+        </section>
+            
+    <?php } ?>
     
-    </section>
+    
 
 
 

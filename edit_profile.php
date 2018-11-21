@@ -53,20 +53,15 @@
         </form>
     </div>
 
-    <!--<div class="input_container">
-        <p>Images</p>
-        <p>Images must be .png or .jpg format</p>
-        <form action="action_upload.php" method="post" enctype="multipart/form-data">
-                Select image to upload:
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Upload Image" name="submit">
+    <div class="input_container">
+
+        <p>Profile Pic: </p>
+        <form action="action_upload.php" method="post" enctype="multipart/form-data"> Select image to upload:
+              <input type="file" name="image">
+              <input type="submit" value="Upload">
         </form>
-        <div>
-            <#?php if (isset($image)){
-                echo $image;
-            }?>
-        </div>
-    </div> -->
+
+    </div>
 
     <?php include_once('footer.php'); ?>
 
