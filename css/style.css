@@ -35,6 +35,11 @@ body>header h1 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 1em;
+    text-decoration: none;
+}
+
+body>header a {
+    text-decoration: none;
 }
 
 #menu li {
@@ -55,10 +60,16 @@ body>footer {
 
 body>footer p {
     margin: 0;
-    font-size: 15px;
+    font-size: small;
 }
 
 /* ----- SECTIONS ----- */
+
+section {
+    box-shadow: 1px 1px rgb(180, 180, 180);
+    border-radius: 2px;
+}
+
 /* ===== CREATE POST ===== */
 
 #create_post button {
@@ -108,8 +119,4 @@ body>footer p {
     padding: 0 15px;
     text-align: justify;
     text-justify: inter-word;
-}
-
-#post {
-    border-color: black;
 }

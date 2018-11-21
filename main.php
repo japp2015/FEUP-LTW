@@ -18,29 +18,12 @@ $posts = $query->fetchAll(); ?>
 
 <body>
 
-    <header id="topBar">
-        <h1>Reddit</h1>
-        <?php if (!isset($_SESSION['username'])) { ?>
-        <nav id="menu">
-            <ul>
-                <li> <button type="button" onclick="location.href='login.php';">LOGIN</button> </li>
-                <li> <button type="button" onclick="location.href='signup.php';">SIGN UP</button> </li>
-            </ul>
-        </nav>
-        <?php } else { ?>
-        <nav id="menu">
-            <ul>
-                <li> <button type="button" onclick="location.href='logout.php';">LOGOUT</button> </li>
-                <li> <button type="button" onclick="location.href='edit_profile.php';">EDIT PROFILE</button> </li>
-            </ul>
-        </nav>
-        <?php } ?>
-    </header>
+    <?php include_once('header.php'); ?>
 
     <div class="container">
 
         <section id="create_post">
-            <p> Create and share content with the community. </p>
+            <p>Create and share content with the community.</p>
             <div class="button">
                 <?php if (!isset($_SESSION["username"])){?>
                     <button type="button" onclick="must_login()">CREATE POST</button>
@@ -53,7 +36,6 @@ $posts = $query->fetchAll(); ?>
 
         <?php foreach($posts as $post) { ?>
         <section>
-
             <article id="post">
                 <a href="single_post.php?id=<?=$post['id']?>" ;>
                     <?php echo "<h3>" . $post['title'] . "</h3>";?></a>
@@ -65,12 +47,10 @@ $posts = $query->fetchAll(); ?>
 
         </section>
         <? } ?>
-
+        
     </div>
 
-    <footer>
-        <p>&copy; 2018 Reddit</p>
-    </footer>
+    <?php include_once('footer.php'); ?>
 
 </body>
 
