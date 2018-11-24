@@ -1,9 +1,24 @@
 /* ----- EDIT PROFILE ----- */
 
-form {
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #bfc9d1;
+}
+
+form {
     width: 50%;
+}
+
+.title_container {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.title_container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4C4C47;
+    margin: 0;
 }
 
 .edit_profile {
@@ -14,27 +29,7 @@ form {
     display: inline-block;
 }
 
-.title_container {
-    text-align: center;
-    padding-top: 2em;
-    padding-bottom: 1em;
-}
-
-form h1 {
-    color: #4C4C47;
-    margin: 0;
-}
-
-hr {
-    border: 0.25px solid white;
-    margin: 0;
-}
-
 form h3 {
-    color: #4C4C47;
-}
-
-label {
     color: #4C4C47;
 }
 
@@ -51,17 +46,18 @@ input[type=text], input[type=password] {
     padding-bottom: 1.5em;
 }
 
-form a {
+.link_container>a {
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     font-weight: bold;
     color: #4C4C47;
 }
 
 .link_container {
-    padding: 0.5em;
+    padding-bottom: 1em;
 }
 
-form button {
+.button_container>button {
     background-color: #FE5F55;
     color: white;
     font-weight: bold;
@@ -83,6 +79,22 @@ form button:hover {
     margin: auto;
 }
 
+.image_container {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4C4C47;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit_image {
+    text-align: left;
+    margin: auto;
+}
+
+.edit_profile h3 {
+    text-align: left;
+}
+
 /* ----- CHANGE PASSWORD ----- */
 
 .change_password h3 {
@@ -93,6 +105,3 @@ form button:hover {
     text-align: center;
 }
 
-.edit_profile h3 {
-    text-align: left;
-}
