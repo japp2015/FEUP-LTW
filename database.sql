@@ -4,7 +4,7 @@ CREATE TABLE user (
     email VARCHAR(320) NOT NULL, -- 64 characters for local part + @ + 255 for domain name
     fullname VARCHAR(128),
     profile_pic VARCHAR,
-    score INTEGER NOT NULL DEFAULT 0 CHECK (score >= 0)
+    score INTEGER NOT NULL DEFAULT 0 
 );
 
 CREATE TABLE post (
@@ -12,7 +12,7 @@ CREATE TABLE post (
     username VARCHAR REFERENCES user NOT NULL,
     title VARCHAR NOT NULL,
     fulltext VARCHAR NOT NULL,
-    post_score INTEGER DEFAULT 0 CHECK (post_score >= 0)
+    post_score INTEGER DEFAULT 0 
 );
 
 CREATE TABLE comment (
@@ -20,7 +20,19 @@ CREATE TABLE comment (
     post_id INTEGER REFERENCES post NOT NULL,
     username VARCHAR REFERENCES user NOT NULL,
     text VARCHAR NOT NULL,
-    comment_score INTEGER DEFAULT 0 CHECK (comment_score >= 0)
+    comment_score INTEGER DEFAULT 0 
+);
+
+CREATE TABLE post_votes (
+    username_id VARCHAR PRIMARY KEY,
+    post_id INTEGER REFERENCES post NOT NULL,
+    value INTEGER NOT NULL
+); 
+
+CREATE TABLE comment_votes (
+    username_id VARCHAR PRIMARY KEY,
+    comment_id INTEGER REFERENCES comment NOT NULL,
+    value INTEGER NOT NULL
 );
 
 INSERT INTO user (username, password, email, fullname) VALUES ('maria', '201506196', 'mariaribeiro@gmail.com', 'Maria Ribeiro');

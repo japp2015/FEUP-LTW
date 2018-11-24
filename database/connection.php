@@ -95,30 +95,6 @@ function UploadPicture($pic, $username) {
   return $stmt->execute([$pic, $username]);
 }
 
-function AddScore($post_id){
-  global $db;
-  $stmt = $db->prepare('UPDATE post SET post_score = post_score + 1 WHERE id = ? ');
-  return $stmt->execute([$post_id]);
-}
-
-function SubtractScore($post_id) {
-  global $db;
-  $stmt = $db->prepare('UPDATE post SET post_score = post_score - 1 WHERE id = ? ');
-  return $stmt->execute([$post_id]);
-}
-
-function AddScoreComment($comment_id){
-  global $db;
-  $stmt = $db->prepare('UPDATE comment SET comment_score = comment_score + 1 WHERE id = ? ');
-  return $stmt->execute([$comment_id]);
-}
-
-function SubtractScoreComment($comment_id) {
-  global $db;
-  $stmt = $db->prepare('UPDATE comment SET comment_score = comment_score - 1 WHERE id = ? ');
-  return $stmt->execute([$comment_id]);
-}
-
 function getUserByUsername($username) {
   global $db;
   $query = $db->prepare('SELECT * FROM user WHERE username = ?');
@@ -132,5 +108,44 @@ function getPostsByUsername($username) {
   $query->execute(array($username));
   return $query->fetchAll();
 }
+
+function post_vote($username_id, $id, $value) {
+  global $db;
+  $stmt = $db->prepare('INSERT INTO post_votes (username_id, post_id, value) VALUES (?, ?, ?) ');
+  return $stmt->execute([$username_id, $id, $value]);
+}
+
+function comment_vote($username_id, $id, $value) {
+  global $db;
+  $stmt = $db->prepare('INSERT INTO comment_votes (username_id, comment_id, value) VALUES (?, ?, ?) ');
+  return $stmt->execute([$username_id, $id, $value]);
+}
+
+function GetPostScore($id) {
+  global $db;
+  $stmt= $db->prepare('SELECT SUM(value)  FROM post_votes WHERE post_id= ?');
+  $stmt->execute(array($id));
+  return $stmt->fetch();
+}
+
+function GetCommentScore($id) {
+  global $db;
+  $stmt= $db->prepare('SELECT SUM(value)  FROM comment_votes WHERE comment_id= ?');
+  $stmt->execute(array($id));
+  return $stmt->fetch();
+}
+
+function UpdateScore($score, $post_id){
+  global $db;
+  $stmt = $db->prepare('UPDATE post SET post_score = ? WHERE id = ? ');
+  return $stmt->execute([$score, $post_id]);
+}
+
+function UpdateScoreComment($score, $comment_id){
+  global $db;
+  $stmt = $db->prepare('UPDATE comment SET comment_score = ? WHERE id = ? ');
+  return $stmt->execute([$score, $comment_id]);
+}
+
 
 ?>

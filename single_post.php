@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php 
 include_once('database/connection.php');
 session_start();
@@ -6,9 +7,6 @@ $id = $_GET['id'];
 if (!isset($_GET['id']))
   die("No id!");
 
-$query = $db->prepare('SELECT * FROM post');
-$query->execute();
-$posts = $query->fetchAll(); 
 
 $post = getPostById($_GET['id']);
 $comments= getCommentsByPostId($id);
@@ -34,8 +32,8 @@ $comments= getCommentsByPostId($id);
             <?php echo $post['title']; ?>
             <p><?php echo $post['fulltext']; ?></p>
             <?php if (isset($_SESSION['username'])) { ?>
-                <button type="button" onclick="location.href='add_score.php?id=<?=$_GET['id']?>';">Like</button>
-                <button type="button" onclick="location.href='subtract_score.php?id=<?=$_GET['id']?>';">Dislike</button>
+                <button type="button" class="fa fa-thumbs-up" onclick="location.href='add_score.php?id=<?=$_GET['id']?>&value=1';"></button>
+                <button type="button" class="fa fa-thumbs-down" onclick="location.href='add_score.php?id=<?=$_GET['id']?>&value=-1';"></button>
             <?php } ?>
             <p> Score:<?php echo $post['post_score']; ?></p>
             <p class="author"><?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?></p>
@@ -55,8 +53,8 @@ $comments= getCommentsByPostId($id);
                     if ($comment['username']==$_SESSION['username']) { ?>
                         <button type="button" class="delete" onclick="location.href='delete_comment.php?id_comment=<?=$comment['id']?>&id_post=<?=$post['id']?>';">Delete your comment</button>
                     <?php }?>
-                    <p> <button type="button" onclick="location.href='add_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>';">Like</button>
-                    <button type="button" onclick="location.href='subtract_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>';">Dislike</button>
+                    <p> <button type="button" class="fa fa-thumbs-up" onclick="location.href='add_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>&value=1';"></button>
+                    <button type="button" class="fa fa-thumbs-down" onclick="location.href='add_score_comment.php?comment_id=<?=$comment['id']?>&post_id=<?=$_GET['id']?>&value=-1';"></button>
                     </p>
                 <?php } ?>
                 <p> Score: <?php echo $comment['comment_score']; ?> </p>
