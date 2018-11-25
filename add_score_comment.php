@@ -10,6 +10,7 @@
     comment_vote($username_id, $comment_id, $value);
     $comment_score=GetCommentScore($comment_id)[0];
     UpdateScoreComment($comment_score, $comment_id);
-
+    $user_score=GetAllUserScore($username);
+    UpdateScoreUser($user_score, $username);
     header('Location: single_post.php?id=' . $post_id);    
 ?> 

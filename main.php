@@ -2,7 +2,7 @@
 session_start();
 
 # Query returning all news in the database:
-$query = $db->prepare('SELECT * FROM post');
+$query = $db->prepare('SELECT * FROM post ORDER BY id DESC');
 $query->execute();
 $posts = $query->fetchAll(); ?>
 

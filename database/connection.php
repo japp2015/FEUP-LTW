@@ -147,5 +147,27 @@ function UpdateScoreComment($score, $comment_id){
   return $stmt->execute([$score, $comment_id]);
 }
 
+function GetUserScoreFromPosts($username) {
+  global $db;
+  $stmt= $db->prepare('SELECT SUM(post_score) FROM post WHERE username= ?');
+  $stmt->execute(array($username));
+  return $stmt->fetch();
+}
 
+function GetUserScoreFromComments($username) {
+  global $db;
+  $stmt= $db->prepare('SELECT SUM(comment_score) FROM comment WHERE username= ?');
+  $stmt->execute(array($username));
+  return $stmt->fetch();
+}
+
+function GetAllUserScore($username) {
+  return GetUserScoreFromPosts($username)[0]+GetUserScoreFromComments($username)[0];
+}
+
+function UpdateScoreUser($score, $username){
+  global $db;
+  $stmt = $db->prepare('UPDATE user SET score = ? WHERE username = ? ');
+  return $stmt->execute([$score, $username]);
+}
 ?>
