@@ -20,7 +20,7 @@
 
 <body>
 
-    <?php include_once('header.php'); ?>
+    <?php include_once('common/header.php'); ?>
 
     <div class="title_container">
         <h1><span class="edit-profile-title">Customize profile</span></h1>
@@ -62,7 +62,7 @@
         </form>
     </div>
 
-    <?php include_once('footer.php'); ?>
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 

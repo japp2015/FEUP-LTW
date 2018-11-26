@@ -16,18 +16,18 @@ session_start();
 
 <body>
 
-    <?php include_once('header.php'); ?>
+    <?php include_once('common/header.php'); ?>
 
     <section class = "add_post">
         <form action="action_post.php" method="post">
             <h3> Create and share content with the community. <h3>
             <div><input type="text" placeholder="Title" name="Title" required></div>
-            <div><textarea rows="4" cols="50" type="text" placeholder="Text (optional)" name="Post"></textarea></div>
+            <div><textarea rows="4" cols="50" placeholder="Text (optional)" name="Post"></textarea></div>
             <div><input type="submit" value="Upload"></div>
         </form>
     </section>
 
-    <?php include_once('footer.php'); ?>
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 

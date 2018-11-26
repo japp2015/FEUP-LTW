@@ -14,12 +14,12 @@ $posts = $query->fetchAll(); ?>
     <title>Reddit</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
-    <script src="must_login.js" defer></script>
+    <script src="javascript/must_login.js" defer></script>
 </head>
 
 <body>
 
-    <?php include_once('header.php'); ?>
+    <?php include_once('common/header.php'); ?>
 
     <div class="container">
 
@@ -43,13 +43,12 @@ $posts = $query->fetchAll(); ?>
                     <?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?>                
                 </footer>
             </article>
-
         </section>
         <? } ?>
         
     </div>
 
-    <?php include_once('footer.php'); ?>
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 

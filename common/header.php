@@ -1,4 +1,3 @@
-
 <header id="topBar">
     <a href="main.php"><h1>Reddit</h1></a>
     <?php if (!isset($_SESSION["username"])) { ?>

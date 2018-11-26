@@ -1,4 +1,4 @@
-<?php $db = new PDO('sqlite:database.db'); 
+<?php $db = new PDO('sqlite:database/database.db'); 
 
 function getPostById($id) {
   global $db;
@@ -170,4 +170,5 @@ function UpdateScoreUser($score, $username){
   $stmt = $db->prepare('UPDATE user SET score = ? WHERE username = ? ');
   return $stmt->execute([$score, $username]);
 }
+
 ?>

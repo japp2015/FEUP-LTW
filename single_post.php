@@ -27,7 +27,7 @@ $comments= getCommentsByPostId($id);
 
 <body>
 
-    <?php include_once('header.php'); ?>
+    <?php include_once('common/header.php'); ?>
 
     <article class="all">
         <section id="post">
@@ -73,7 +73,7 @@ $comments= getCommentsByPostId($id);
         
     </article>
 
-    <?php include_once('footer.php'); ?>
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 

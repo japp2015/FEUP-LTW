@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php include_once('header.php'); ?>
+    <?php include_once('common/header.php'); ?>
 
     <div class="change_password">
         <form class="edit_content" action='action_change_password.php' method='post'>
@@ -42,7 +42,7 @@
         </form>
     </div>
 
-    <?php include_once('footer.php'); ?>
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 
