@@ -1,0 +1,24 @@
+#comments {
+    color: #4C4C47;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 20px;
+}
+
+#comments a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #FE5F55;
+    font-weight: bold;
+}
+
+.add_comment {
+    text-align: center;
+    background-color: #bfc9d1;
+    box-shadow: none;
+}
+
+.add_comment input[type="text"] {
+    width: 90%;
+}

@@ -54,7 +54,6 @@ body>footer {
     color: #4C4C47;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1em;
-    margin: 0;
     height: 1em;
 }
 
@@ -111,12 +110,16 @@ section {
 
 #post h3 {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 #post p {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 15px;
+    padding: 0 20px;
     text-align: justify;
     text-justify: inter-word;
+}
+
+#post footer {
+    font-size: small;
 }

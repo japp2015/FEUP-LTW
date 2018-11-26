@@ -28,7 +28,6 @@ $posts = $query->fetchAll(); ?>
             <div class="button">
                 <?php if (!isset($_SESSION["username"])){?>
                     <button type="button" onclick="must_login()">CREATE POST</button>
-                    <p id="demo"></p>
                 <?php } else { ?>
                     <button type="button" onclick="location.href='new_post.php';">CREATE POST</button>
                 <?php } ?>
@@ -38,8 +37,7 @@ $posts = $query->fetchAll(); ?>
         <?php foreach($posts as $post) { ?>
         <section>
             <article id="post">
-                <a href="single_post.php?id=<?=$post['id']?>" ;>
-                    <?php echo "<h3>" . $post['title'] . "</h3>";?></a>
+                <a href="single_post.php?id=<?=$post['id']?>" ;><?php echo "<h3>" . $post['title'] . "</h3>";?></a>
                 <?php echo "<p>" . $post['fulltext'] . "</p>"; ?>
                 <footer>
                     <?php echo "<p> Posted by <a href='view_profile.php?username=". $post['username'] ."'>" . $post['username'] . "</a></p>"; ?>                
